@@ -1,0 +1,23 @@
+<nav class="navbar px-5 bg-light">
+    <h1 class="text-primary fw-bold">T-Cart</h1>
+    <div>
+        <div class="input-group" *ngIf="menuType === 'default'">
+            <input type="text" class="form-control" placeholder="Search Products">
+            <button class="btn btn-outline-secondary" type="button">Search</button>
+        </div>
+    </div>
+    <div [ngSwitch]="menuType">
+        <ul class="d-flex list-unstyled mb-0 align-items-center" *ngSwitchCase="'default'">
+            <li><a class="text-primary p-3 text-decoration-none" routerLink="/seller-auth">Seller</a></li>
+            <li><a class="text-primary p-3 text-decoration-none" routerLink="/">Home</a></li>
+            <li><a class="text-primary p-3 text-decoration-none" href="#">Login</a></li>
+            <li><a class="text-primary p-3 text-decoration-none" href="#">Cart(0)</a></li>
+        </ul>
+        <ul class="d-flex list-unstyled mb-0 align-items-center" *ngSwitchCase="'seller'">
+            <li><a class="text-primary p-3 text-decoration-none" routerLink="/seller-add-products">Add Products</a></li>
+            <li><a class="text-primary p-3 text-decoration-none" routerLink="/">List</a></li>
+            <li><a class="text-primary p-3 text-decoration-none" href="#" (click)="logout()">Logout</a></li>
+            <li><a class="text-primary p-3 text-decoration-none" href="#">{{ sellerName | titlecase }}</a></li>
+        </ul>
+    </div>
+</nav>

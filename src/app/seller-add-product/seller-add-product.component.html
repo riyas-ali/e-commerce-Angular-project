@@ -1,0 +1,15 @@
+    <div class="d-flex justify-content-center align-items-center" style="height: calc(100vh - 72px);">
+    <div class="d-flex flex-column">
+        <h1 class="fw-bold">Add New Products</h1>
+        <p class="text-success text-center">{{ addProductMessage }}</p>
+        <form #addProduct="ngForm" (ngSubmit)="addProducts(addProduct.value)" class="d-flex flex-column">
+            <input type="text" class="form-control mb-2" placeholder="Enter Product Name" name="name" ngModel>
+            <input type="text" class="form-control mb-2" placeholder="Enter Product Price" name="price" ngModel>
+            <input type="text" class="form-control mb-2" placeholder="Enter Product Color" name="color" ngModel>
+            <input type="text" class="form-control mb-2" placeholder="Enter Product Category" name="category" ngModel>
+            <textarea type="text" class="form-control mb-2" placeholder="Enter Product Description" name="description" ngModel></textarea>
+            <input type="text" class="form-control mb-2" placeholder="Enter Product Image URL" name="url" ngModel>
+            <button class="btn btn-primary">Add Product</button>
+        </form>
+    </div>
+</div>
