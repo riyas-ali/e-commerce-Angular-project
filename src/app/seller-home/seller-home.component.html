@@ -1,1 +1,28 @@
-<p>seller-home works!</p>
+<div class="container">
+    <h1>All Products</h1>
+    <p class="">{{ productMessage }}</p>
+    <table class="text-left border w-100">
+        <thead class="border-bottom">
+            <th class="border-end p-2">Image</th>
+            <th class="border-end p-2">Name</th>
+            <th class="border-end p-2">Price</th>
+            <th class="border-end p-2">Color</th>
+            <th class="border-end p-2">Category</th>
+            <th class="border-end p-2">Description</th>
+            <th class="p-2">Action</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of productList" class="border-bottom">
+                <td class="border-end p-2"><img src="{{ item.image }}" class="img-fluid m-auto d-block" style="width: 150px; height: auto"></td>
+                <td class="border-end p-2">{{ item.name }}</td>
+                <td class="border-end p-2">{{ item.price }}</td>
+                <td class="border-end p-2">{{ item.color }}</td>
+                <td class="border-end p-2">{{ item.category }}</td>
+                <td class="border-end p-2">{{ item.description }}</td>
+                <td class=" p-2">
+                    <button class="btn btn-danger" (click)="deleteProduct(item.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

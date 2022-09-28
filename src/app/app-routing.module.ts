@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'seller-auth', component: SellerAuthComponent },
   { path: 'seller-home', component: SellerHomeComponent, canActivate: [AuthGuard] },
-  { path: 'seller-add-products', component: SellerAddProductComponent, canActivate: [AuthGuard] }
+  { path: 'seller-add-products', component: SellerAddProductComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({

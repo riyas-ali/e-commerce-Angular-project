@@ -23,8 +23,17 @@
       "color": "Mobile",
       "category": "Black",
       "description": "A Samsung Products",
-      "url": "https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-a40-1.jpg",
+      "image": "https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-a40-1.jpg",
       "id": 2
+    },
+    {
+      "name": "hp laptop",
+      "price": "259999",
+      "color": "black",
+      "category": "laptop",
+      "description": "this is a powerful laptop",
+      "url": "https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-a40-1.jpg",
+      "id": 3
     }
   ]
 }
