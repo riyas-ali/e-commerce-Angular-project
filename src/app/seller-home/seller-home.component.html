@@ -13,7 +13,7 @@
         </thead>
         <tbody>
             <tr *ngFor="let item of productList" class="border-bottom">
-                <td class="border-end p-2"><img src="{{ item.image }}" class="img-fluid m-auto d-block" style="width: 150px; height: auto"></td>
+                <td class="border-end p-2"><img src="{{ item.url }}" class="img-fluid m-auto d-block" style="width: 150px; height: auto"></td>
                 <td class="border-end p-2">{{ item.name }}</td>
                 <td class="border-end p-2">{{ item.price }}</td>
                 <td class="border-end p-2">{{ item.color }}</td>
@@ -22,6 +22,9 @@
                 <td class=" p-2">
                     <button class="btn btn-danger" (click)="deleteProduct(item.id)">
                         <fa-icon [icon]="icon"></fa-icon>
+                    </button>
+                    <button class="btn btn-primary ms-2" routerLink="/seller-update-product/{{item.id}}">
+                        <fa-icon [icon]="editIcon"></fa-icon>
                     </button>
                 </td>
             </tr>

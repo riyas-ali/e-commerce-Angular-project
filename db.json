@@ -11,10 +11,10 @@
     {
       "name": "I phone 14",
       "price": "100000",
-      "category": "mobiles",
       "color": "black",
-      "image": "https://www.apple.com/newsroom/images/product/iphone/geo/Apple-iPhone-14-iPhone-14-Plus-hero-220907-geo_Full-Bleed-Image.jpg.large.jpg",
+      "category": "mobiles",
       "description": "hello users",
+      "url": "https://imageio.forbes.com/specials-images/imageserve/627fa3b6a736222d2161069c/Apple--iPhone-14--iPhone-14-Pro--iPhone-14-Max--iPhone-14-Pro-Max--new-iPhone-/0x0.jpg?format=jpg&crop=1835,1375,x402,y49,safe&width=960",
       "id": 1
     },
     {
@@ -23,7 +23,7 @@
       "color": "Mobile",
       "category": "Black",
       "description": "A Samsung Products",
-      "image": "https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-a40-1.jpg",
+      "url": "https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-a40-1.jpg",
       "id": 2
     },
     {
