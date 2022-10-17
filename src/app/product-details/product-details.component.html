@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="card" style="overflow: hidden" *ngIf="productData">
+        <div class="row">
+            <div class="col-6">
+                <img src="{{productData.url}}" alt="{{productData.name}}" class="img-fluid">
+            </div>
+            <div class="col-6 p-3">
+                <h1>{{productData.name}}</h1>
+                <p>Price: {{productData.price}}</p>
+                <p>Color: <span [style.backgroundColor]="productData.color" class="border rounded-circle ms-2 d-block" style="width: 40px; height:40px"></span></p>
+                <p>Category: {{productData.category}}</p>
+                <p>Description: {{productData.description}}</p>
+                <div class="my-2">
+                    <button class="border-0 bg-transparent" (click)="handleQuantity('min')"><b>-</b></button>
+                    <input type="text" value="{{productQuantity}}" style="width: 50px" class="text-center">
+                    <button class="border-0 bg-transparent" (click)="handleQuantity('plus')"><b>+</b></button>
+                </div>
+                <button class="btn btn-primary me-2">Add to Cart</button>
+                <button class="btn btn-primary">Buy Now</button>
+            </div>
+        </div>
+    </div>
+</div>

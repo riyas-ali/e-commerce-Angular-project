@@ -14,7 +14,7 @@
       "color": "black",
       "category": "mobiles",
       "description": "hello users",
-      "url": "https://imageio.forbes.com/specials-images/imageserve/627fa3b6a736222d2161069c/Apple--iPhone-14--iPhone-14-Pro--iPhone-14-Max--iPhone-14-Pro-Max--new-iPhone-/0x0.jpg?format=jpg&crop=1835,1375,x402,y49,safe&width=960",
+      "url": "/assets/product-images/image-1.jpg",
       "id": 1
     },
     {
@@ -23,7 +23,7 @@
       "color": "Mobile",
       "category": "Black",
       "description": "A Samsung Products",
-      "url": "https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-a40-1.jpg",
+      "url": "/assets/product-images/image-2.jpg",
       "id": 2
     },
     {
@@ -32,7 +32,72 @@
       "color": "black",
       "category": "laptop",
       "description": "this is a powerful laptop",
-      "url": "https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-a40-1.jpg",
+      "url": "/assets/product-images/image-3.jpg",
+      "id": 3
+    },
+    {
+      "name": "Oppo 1",
+      "price": "2000",
+      "color": "Red",
+      "category": "Mobile",
+      "description": "it's an oppo mobile",
+      "url": "https://images.unsplash.com/photo-1529163835670-f5e2159a34a0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=990&q=80",
+      "id": 4
+    },
+    {
+      "name": "Msi Laptop",
+      "price": "25000",
+      "color": "Gray",
+      "category": "Laptop",
+      "description": "it's a Msi Laptop",
+      "url": "https://images.unsplash.com/photo-1619683172106-ff242162eb4b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80",
+      "id": 5
+    },
+    {
+      "name": "Canon 7D",
+      "price": "50000",
+      "color": "Black",
+      "category": "Camera",
+      "description": "it's a canon Camara",
+      "url": "https://images.unsplash.com/uploads/141219324227007364f95/be0967a3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+      "id": 6
+    },
+    {
+      "name": "Mechanical Keyboard",
+      "price": "9000",
+      "color": "Black",
+      "category": "Keyboard",
+      "description": "Mechanical Keyboard",
+      "url": "https://images.unsplash.com/photo-1599563491866-6a696c913190?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+      "id": 7
+    },
+    {
+      "name": "Wireless Headset",
+      "price": "23000",
+      "color": "Gold",
+      "category": "Headset",
+      "description": "Wireless headset",
+      "url": "https://images.unsplash.com/photo-1516972238977-89271fb2bab8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+      "id": 8
+    }
+  ],
+  "user": [
+    {
+      "name": "riyas",
+      "email": "riyasa@test.com",
+      "password": "123456",
+      "id": 1
+    },
+    {
+      "name": "riyas",
+      "email": "riyas@132.com",
+      "password": "asd@123",
+      "id": 2
+    },
+    {
+      "name": "riyas",
+      "email": "riyas@123.com",
+      "password": "231joj",
       "id": 3
     }
   ]

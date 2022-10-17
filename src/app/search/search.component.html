@@ -1,0 +1,15 @@
+<div class="container">
+        <div class="row mb-2" *ngFor="let item of searchProducts">
+        <div class="col-4">
+            <a routerLink="/details/{{item.id}}">
+                <img class="img-fluid" src="{{item.url}}" alt="{{item.name}}">
+            </a>
+        </div>
+        <div class="col-8">
+            <h1 routerLink="/details/{{item.id}}" style="cursor: pointer">{{item.name}}</h1>
+            <p class="fw-bold">Price : {{item.price}}</p>
+            <p><span>Category: {{item.category}}</span> <span>Color: {{item.color}}</span></p>
+            <p>{{item.description}}</p>
+        </div>
+    </div>
+</div>

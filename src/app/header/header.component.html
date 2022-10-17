@@ -1,16 +1,28 @@
 <nav class="navbar px-5 bg-light">
-    <h1 class="text-primary fw-bold">T-Cart</h1>
-    <div>
+    <h1 class="text-primary fw-bold" style="cursor: pointer" routerLink="/">T-Cart</h1>
+    <div class="w-50">
         <div class="input-group" *ngIf="menuType === 'default'">
-            <input type="text" class="form-control" placeholder="Search Products">
-            <button class="btn btn-outline-secondary" type="button">Search</button>
+            <input type="text" #searchInput (keyup)="searchProduct($event)" (blur)="hideSearch()" class="form-control" placeholder="Search Products">
+            <button (click)="submitSearch(searchInput.value)" class="btn btn-outline-secondary" type="button">Search</button>
         </div>
+        <ul class="card mt-2 position-absolute w-50" style="z-index: 1" *ngIf="searchResult">
+            <li *ngFor="let item of searchResult" class="list-unstyled">
+                <a (mousedown)="redirectToDetails(item.id)" class="p-2 mt-1 text-decoration-none text-black d-inline-block">{{ item.name }}</a>
+            </li>
+        </ul>
     </div>
     <div [ngSwitch]="menuType">
         <ul class="d-flex list-unstyled mb-0 align-items-center" *ngSwitchCase="'default'">
             <li><a class="text-primary p-3 text-decoration-none" routerLink="/seller-auth">Seller</a></li>
             <li><a class="text-primary p-3 text-decoration-none" routerLink="/">Home</a></li>
-            <li><a class="text-primary p-3 text-decoration-none" href="#">Login</a></li>
+            <li><a class="text-primary p-3 text-decoration-none" routerLink="user-auth">Login/Sign-up</a></li>
+            <li><a class="text-primary p-3 text-decoration-none" href="#">Cart(0)</a></li>
+        </ul>
+        <ul class="d-flex list-unstyled mb-0 align-items-center" *ngSwitchCase="'user'">
+            <li><a class="text-primary p-3 text-decoration-none" routerLink="/seller-auth">Seller</a></li>
+            <li><a class="text-primary p-3 text-decoration-none" routerLink="/">Home</a></li>
+            <li><a class="text-primary p-3 text-decoration-none">{{userName | titlecase}}</a></li>
+            <li><a class="text-primary p-3 text-decoration-none" style="cursor: pointer" (click)="userLogout()">Logout</a></li>
             <li><a class="text-primary p-3 text-decoration-none" href="#">Cart(0)</a></li>
         </ul>
         <ul class="d-flex list-unstyled mb-0 align-items-center" *ngSwitchCase="'seller'">
