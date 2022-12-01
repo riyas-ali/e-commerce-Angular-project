@@ -1,12 +1,5 @@
 {
-  "seller": [
-    {
-      "name": "Riyas",
-      "email": "riyasalimkokl@gmail.com",
-      "password": "open@123",
-      "id": 1
-    }
-  ],
+  "seller": [],
   "products": [
     {
       "name": "I phone 14",
@@ -81,24 +74,7 @@
       "id": 8
     }
   ],
-  "user": [
-    {
-      "name": "riyas",
-      "email": "riyasa@test.com",
-      "password": "123456",
-      "id": 1
-    },
-    {
-      "name": "riyas",
-      "email": "riyas@132.com",
-      "password": "asd@123",
-      "id": 2
-    },
-    {
-      "name": "riyas",
-      "email": "riyas@123.com",
-      "password": "231joj",
-      "id": 3
-    }
-  ]
+  "user": [],
+  "cart": [],
+  "orders": []
 }

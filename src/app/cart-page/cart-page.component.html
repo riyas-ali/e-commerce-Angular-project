@@ -1,0 +1,53 @@
+<div class="cart-page p-3">
+    <h1 class="text-center pb-4">Cart</h1>
+  <p *ngIf="noItemsInCart" class="text-center">Cart empty!. Add items from list. <span routerLink="/" class="text-primary" style="cursor: pointer" >Add items</span></p>
+    <div class="row" *ngIf="cartData?.length != 0">
+        <div class="col-8 border-end">
+            <ul *ngFor="let item of cartData" class="d-flex w-100 justify-content-between align-items-center border-bottom pb-2">
+                <li class="list-unstyled">
+                    <img src="{{item.url}}" style="height: 100px; width: 100px;" class="rounded">
+                </li>
+                <li class="list-unstyled">
+                    <span>{{item.name}}"</span>
+                </li>
+                <li class="list-unstyled">
+                    <span>Price: {{item.price}}"</span>
+                </li>
+                <li class="list-unstyled">
+                    <span>Quantity: {{item.quantity}}</span>
+                </li>
+                <li class="list-unstyled">
+                    <Button class="btn btn-primary" (click)="removeItem(item.id)">Remove Item</Button>
+                </li>
+            </ul>
+        </div>
+        <div class="col-4">
+            <h3 class="text-center">Summary</h3>
+            <ul class="border p-3">
+                <li class="list-unstyled align-items-center d-flex justify-content-between">
+                    <span>Amount</span>
+                    <span>{{ priceSummary.price }}</span>
+                </li>
+                <li class="list-unstyled align-items-center d-flex justify-content-between">
+                    <span>Tax</span>
+                    <span>{{ priceSummary.tax }}</span>
+                </li>
+                <li class="list-unstyled align-items-center d-flex justify-content-between">
+                    <span>Delivery</span>
+                    <span>{{ priceSummary.delivery }}</span>
+                </li>
+                <li class="list-unstyled align-items-center d-flex justify-content-between border-bottom pb-1">
+                    <span>Discount</span>
+                    <span>{{ priceSummary.discount }}</span>
+                </li>
+                <li class="list-unstyled align-items-center d-flex justify-content-between pt-1">
+                    <span class="fw-bold">Total</span>
+                    <span class="fw-bold">{{ priceSummary.total }}</span>
+                </li>
+                <li class="list-unstyled align-items-center d-flex justify-content-end">
+                    <button class="btn btn-success mt-2" (click)="checkout()">Checkout</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

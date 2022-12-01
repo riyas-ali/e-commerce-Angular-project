@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { login, SignUp } from '../data-type';
+import { cart, login, product, SignUp } from '../data-type';
+import { ProductService } from '../services/product.service';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -10,9 +11,9 @@ import { UserService } from '../services/user.service';
 export class UserAuthComponent implements OnInit {
 
   showLogin = true;
-  authError: undefined;
+  authError = '';
 
-  constructor( private userService: UserService ) { }
+  constructor( private userService: UserService, private productService: ProductService ) { }
 
   ngOnInit(): void {
     this.userService.userAuthReload();
@@ -27,11 +28,49 @@ export class UserAuthComponent implements OnInit {
   }
 
   login(val: login) {
-    console.warn(val);
+    this.userService.userLogin(val);
+    this.userService.isLoginError.subscribe((isError) => {
+      if(isError) {
+        this.authError = "Email And Password Doesn't Match"
+      }else {
+        setTimeout(() => {
+          this.localCartToRemoteCart();
+        }, 300);
+      }
+    })
   }
-
+  
   openSignup() {
     this.showLogin = false;
+  }
+
+  localCartToRemoteCart() {
+    let data = localStorage.getItem('localCart');
+    let user = localStorage.getItem('user');
+    let userId = user && JSON.parse(user).id;
+    if(data) {
+      let cartDataList:product[] = JSON.parse(data);
+      cartDataList.forEach((product: product,index) => {
+        let cartData: cart = {
+          ...product,
+          productId: product.id,
+          userId
+        }
+        delete cartData.id;
+        setTimeout(() => {
+          this.productService.addToCart(cartData).subscribe((result) => {
+            if (result) {
+            }
+          })
+        }, 500);
+        if (cartDataList.length === index + 1) {
+          localStorage.removeItem('localCart')
+        }
+      });
+    }
+    setTimeout(() => {
+    this.productService.getCartList(userId);
+    }, 2000);
   }
 
 }

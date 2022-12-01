@@ -15,8 +15,9 @@
                     <input type="text" value="{{productQuantity}}" style="width: 50px" class="text-center">
                     <button class="border-0 bg-transparent" (click)="handleQuantity('plus')"><b>+</b></button>
                 </div>
-                <button class="btn btn-primary me-2">Add to Cart</button>
-                <button class="btn btn-primary">Buy Now</button>
+                <button class="btn btn-primary me-2">Buy Now</button>
+                <button *ngIf="!removeCart" class="btn btn-primary" (click)="addToCart()">Add to Cart</button>
+                <button *ngIf="removeCart" class="btn btn-primary" (click)="removeFromCart(productData.id)">Remove from Cart</button>
             </div>
         </div>
     </div>

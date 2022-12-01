@@ -13,6 +13,7 @@ export class HeaderComponent implements OnInit {
   sellerName = '';
   searchResult: undefined | product[];
   userName:string = '';
+  cartItem = 0;
 
   constructor(
     private router: Router,
@@ -33,13 +34,24 @@ export class HeaderComponent implements OnInit {
             let userStore = localStorage.getItem('user');
             let userData = userStore && JSON.parse(userStore);
             this.userName = userData.name;
-            this.menuType = 'user'
+            this.menuType = 'user';
+            this.product.getCartList(userData.id);
         } else {
           this.menuType = 'default'
         }
       }
       
     })
+
+    let cartData = localStorage.getItem('localCart');
+    if(cartData) {
+      this.cartItem = JSON.parse(cartData).length;
+    }
+    
+    this.product.cartData.subscribe((items) => {
+      this.cartItem = items.length;
+    })
+
   }
 
   searchProduct(query: KeyboardEvent) {
@@ -63,6 +75,7 @@ export class HeaderComponent implements OnInit {
   userLogout() {
     localStorage.removeItem('user');
     this.router.navigate(['/user-auth']);
+    this.product.cartData.emit([]);
   }
 
   hideSearch() {
